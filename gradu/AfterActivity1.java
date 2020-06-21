@@ -24,6 +24,7 @@ public class AfterActivity1 extends maintool implements View.OnClickListener{
     ImageView cubtn;
     ImageView gsbtn;
     ImageView msbtn;
+    ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,10 +34,12 @@ public class AfterActivity1 extends maintool implements View.OnClickListener{
         cubtn=findViewById(R.id.cubtn);
         gsbtn=findViewById(R.id.gsbtn);
         msbtn=findViewById(R.id.msbtn);
+        imageView=findViewById(R.id.imageView);
 
         cubtn.setOnClickListener(this);
         gsbtn.setOnClickListener(this);
         msbtn.setOnClickListener(this);
+        imageView.setOnClickListener(this);
 
     }
 
@@ -61,6 +64,10 @@ public class AfterActivity1 extends maintool implements View.OnClickListener{
                 Intent intent3 = new Intent(this, ms.class);
                 startActivity(intent3);
                 overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+                break;
+
+            case R.id.imageView:
+                imageView.setVisibility(View.GONE);
                 break;
 
             default:

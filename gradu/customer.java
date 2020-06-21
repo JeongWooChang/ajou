@@ -60,14 +60,6 @@ public class customer extends maintool implements View.OnClickListener{
         // Firebase sign out
         mAuth.getCurrentUser().delete();
 
-        // Google revoke access
-        mGoogleSignInClient.revokeAccess().addOnCompleteListener(this,
-                new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-
-                    }
-                });
     }
     @Override
     public void onClick(View v) {
@@ -78,6 +70,7 @@ public class customer extends maintool implements View.OnClickListener{
                 break;
             case R.id.btn_revoke:
                 revokeAccess();
+                signOut();
                 finishAffinity();
                 break;
         }
